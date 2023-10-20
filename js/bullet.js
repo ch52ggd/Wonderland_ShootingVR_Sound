@@ -39,7 +39,7 @@ export class Bullet extends Component {
 
         this.object.setPositionWorld([this.bulletPos[0], this.bulletPos[1] + this.speed, this.bulletPos[2]]);
 
-        if(this.bulletPos[1] > 7){
+        if(this.bulletPos[1] > 6.5){
 
             this.object.destroy();
         } 

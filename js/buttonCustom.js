@@ -53,6 +53,10 @@ export class ButtonCustom extends Component {
     /* Position to return to when "unpressing" the button */
     returnPos = new Float32Array(3);
 
+
+
+    startSound;
+
     start() {
         this.mesh = this.buttonMeshObject.getComponent(MeshComponent);
         this.defaultMaterial = this.mesh.material;
@@ -75,6 +79,8 @@ export class ButtonCustom extends Component {
 
         this.gameManager = this.gameManager.getComponent(GameManager);
         this.playerController = this.playerController.getComponent(PlayerController);
+
+        this.startSound = this.object.addComponent('audio-source', {audioFile: 'sfx/GameStart.wav'});
     }
 
     onActivate() {
@@ -103,7 +109,7 @@ export class ButtonCustom extends Component {
 
     /* Called by 'cursor-target' */
     onDown = (_, cursor) => {
-        this.soundClick.play();
+        //this.soundClick.play();
         this.buttonMeshObject.translate([0.0, -0.1, 0.0]);
         hapticFeedback(cursor.object, 1.0, 20);
 
@@ -112,6 +118,11 @@ export class ButtonCustom extends Component {
         this.gameManager.isPlay = !this.gameManager.isPlay;
 
         this.playerController.isReset();
+
+        if(this.gameManager.isPlay === true){
+
+            this.startSound.play();
+        }
 
         //console.log(this.gameManager.isPlay);
         

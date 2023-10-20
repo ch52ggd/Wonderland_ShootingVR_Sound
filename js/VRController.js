@@ -28,7 +28,7 @@ export class VRController extends Component {
     moveUp;
     moveDown;
 
-
+    startSound;
     
     static onRegister(engine) {
         /* Triggered when this component class is registered.
@@ -46,6 +46,8 @@ export class VRController extends Component {
         //console.log('start() with param', this.param);
 
         this.gameManager = this.gameManager.getComponent(GameManager);
+
+        this.startSound = this.object.addComponent('audio-source', {audioFile: 'sfx/GameStart.wav'});
     }
 
     update(dt) {
@@ -97,6 +99,11 @@ export class VRController extends Component {
 
         //console.log("squeeze start event");
         this.gameManager.isPlay = !this.gameManager.isPlay;
+        
+        if(this.gameManager.isPlay === true){
+
+            this.startSound.play();
+        }
     }
     squeezeend(e){
 

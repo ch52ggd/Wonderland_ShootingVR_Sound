@@ -1,5 +1,7 @@
 import {Component, Property, CollisionEventType} from '@wonderlandengine/api';
 
+//import {AudioSource} from '@wonderlandengine/components';
+
 /**
  * enemyControllerPhysX
  */
@@ -7,14 +9,19 @@ export class EnemyControllerPhysX extends Component {
     static TypeName = 'enemyControllerPhysX';
     /* Properties that are configurable in the editor */
     static Properties = {
+
     };
 
     speed = 0.075;
+
+    //explosion;
 
     static onRegister(engine) {
         /* Triggered when this component class is registered.
          * You can for instance register extra component types here
          * that your component may create. */
+
+        //engine.registerComponent(AudioSource);
     }
 
     init() {
@@ -27,6 +34,10 @@ export class EnemyControllerPhysX extends Component {
         this.object.name = "enemy";
 
         this.initCollision();
+
+
+
+        //this.explosion = this.object.addComponent('audio-source', {audioFile: 'sfx/Explosion.wav'});
     }
 
     update(dt) {
@@ -70,7 +81,7 @@ export class EnemyControllerPhysX extends Component {
                     return;
                 }
                 else{
-
+                    
                     return;
                 }
             }.bind(this)

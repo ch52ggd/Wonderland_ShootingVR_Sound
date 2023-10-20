@@ -242,6 +242,9 @@
                             ]
                         }
                     }
+                },
+                {
+                    "type": "audio-source"
                 }
             ],
             "translation": [
@@ -456,6 +459,12 @@
                         "game": "270"
                     },
                     "active": false
+                },
+                {
+                    "type": "audio-source",
+                    "audio-source": {
+                        "audioFile": "sfx/Explosion.wav"
+                    }
                 }
             ],
             "scaling": [
@@ -506,6 +515,9 @@
                         "gameManager": "270",
                         "vrController": "14"
                     }
+                },
+                {
+                    "type": "audio-source"
                 }
             ],
             "scaling": [
@@ -1908,6 +1920,9 @@
                     "vr-mode-active-switch": {
                         "activateComponents": "in non-VR"
                     }
+                },
+                {
+                    "type": "audio-listener"
                 }
             ],
             "translation": [
@@ -2000,6 +2015,10 @@
                 {
                     "type": "howler-audio-listener",
                     "active": false
+                },
+                {
+                    "type": "audio-listener",
+                    "active": false
                 }
             ]
         },
@@ -2072,6 +2091,9 @@
                 {
                     "type": "text",
                     "active": false
+                },
+                {
+                    "type": "audio-source"
                 }
             ],
             "translation": [
@@ -2238,17 +2260,6 @@
                 1.0,
                 7.5,
                 0.9999955
-            ]
-        },
-        "290": {
-            "name": "Empty",
-            "components": [
-                {
-                    "type": "audio-listener"
-                },
-                {
-                    "type": "audio-source"
-                }
             ]
         }
     },

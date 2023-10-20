@@ -14,6 +14,8 @@ export class GameManager extends Component {
 
     isPlay;
 
+    bgm;
+
     static onRegister(engine) {
         /* Triggered when this component class is registered.
          * You can for instance register extra component types here
@@ -22,6 +24,7 @@ export class GameManager extends Component {
 
     init() {
         //console.log('init() with param', this.param);
+
     }
 
     start() {
@@ -30,10 +33,21 @@ export class GameManager extends Component {
         this.score = 0;
 
         this.isPlay = false;
+
+        this.bgm = this.object.addComponent('audio-source', {audioFile: 'sfx/BGM.wav'});
     }
 
     update(dt) {
         /* Called every frame. */
+
+        if(this.isPlay === true){
+
+            this.bgm.play();
+        }
+        if(this.isPlay === false){
+
+            this.bgm.stop();
+        }
     }
 
 

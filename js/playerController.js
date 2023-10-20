@@ -32,6 +32,10 @@ export class PlayerController extends Component {
 
     isDie = false;
 
+    shootSound;
+    overSound;
+    explosionSound;
+
     static onRegister(engine) {
         /* Triggered when this component class is registered.
          * You can for instance register extra component types here
@@ -61,6 +65,10 @@ export class PlayerController extends Component {
         window.addEventListener('keyup', this.release.bind(this));
 
         this.initCollision();
+
+        this.shootSound = this.object.addComponent('audio-source', {audioFile: 'sfx/Shoot.wav'});
+        this.overSound = this.object.addComponent('audio-source', {audioFile: 'sfx/GameOver.wav'});
+        this.explosionSound = this.object.addComponent('audio-source', {audioFile: 'sfx/Explosion.wav'});
     }
 
     update(dt) {
@@ -78,6 +86,7 @@ export class PlayerController extends Component {
                 if(this.time >= this.spawnInterval){
 
                     this.bulletManager.spawnBullet();
+                    this.shootSound.play();
                     this.time = 0;
                 }
             }
@@ -87,6 +96,7 @@ export class PlayerController extends Component {
                 if(this.time >= this.spawnInterval){
 
                     this.bulletManager.spawnBullet();
+                    this.shootSound.play();
                     this.time = 0;
                 }
             }
@@ -180,6 +190,8 @@ export class PlayerController extends Component {
                         this.gameManager.score = 0;
 
                         this.isDie = true;
+
+                        this.overSound.play();
                     }
 
                     return;
