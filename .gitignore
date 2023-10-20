@@ -1,0 +1,14 @@
+# Wonderland
+cache/
+deploy/
+node_modules/
+ssl/
+.editor/
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
