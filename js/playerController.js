@@ -5,6 +5,8 @@ import {GameManager} from './gameManager.js';
 
 import {VRController} from './VRController.js';
 
+//import {AudioSource} from '@wonderlandengine/components';
+
 /**
  * playerController
  */

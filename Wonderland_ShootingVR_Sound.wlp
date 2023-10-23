@@ -463,7 +463,7 @@
                 {
                     "type": "audio-source",
                     "audio-source": {
-                        "audioFile": "sfx/Explosion.wav"
+                        "audioFile": ""
                     }
                 }
             ],
@@ -491,7 +491,7 @@
                 {
                     "type": "mesh",
                     "mesh": {
-                        "mesh": "12",
+                        "mesh": "9",
                         "material": "22"
                     },
                     "active": true
@@ -523,7 +523,7 @@
             "scaling": [
                 0.15,
                 0.15,
-                1.0
+                0.15
             ],
             "translation": [
                 0.0,
@@ -1922,7 +1922,8 @@
                     }
                 },
                 {
-                    "type": "audio-listener"
+                    "type": "audio-listener",
+                    "active": false
                 }
             ],
             "translation": [
@@ -2018,7 +2019,7 @@
                 },
                 {
                     "type": "audio-listener",
-                    "active": false
+                    "active": true
                 }
             ]
         },

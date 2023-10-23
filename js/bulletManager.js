@@ -1,6 +1,7 @@
 import {Component, PhysXComponent, Shape, Property} from '@wonderlandengine/api';
 
 import {PlayerController} from './playerController.js';
+import {GameManager} from './gameManager.js';
 import {Bullet} from './bullet.js';
 
 /**
@@ -13,6 +14,7 @@ export class BulletManager extends Component {
         param: Property.float(1.0),
 
         playerController: Property.object(),
+        gameManager: Property.object(),
         bullet: Property.object(),
 
         bulletMesh: Property.mesh(),
@@ -33,6 +35,7 @@ export class BulletManager extends Component {
         //console.log('start() with param', this.param);
 
         this.playerController = this.playerController.getComponent(PlayerController);
+        this.gameManager = this.gameManager.getComponent(GameManager);
         this.bullet = this.bullet.getComponent(Bullet);
 
     }
@@ -72,5 +75,7 @@ export class BulletManager extends Component {
         });
 
         obj.addComponent(Bullet);
+        obj.getComponent(Bullet).gameManager = this.gameManager;
+        obj.getComponent(Bullet).playerController = this.playerController;
     }
 }

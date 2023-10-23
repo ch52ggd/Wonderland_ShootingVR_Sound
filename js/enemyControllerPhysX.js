@@ -74,7 +74,7 @@ export class EnemyControllerPhysX extends Component {
 
                     if(otherObj.includes("bullet")){
 
-                        this.gameManager.isKill();
+                        //this.gameManager.isKill();
                         setTimeout(() => {this.object.destroy();}, 50);
                     }
 
