@@ -58,7 +58,7 @@ export class EnemySpawner extends Component {
         if(this.gameManager.isPlay === true){
 
             //Enemy spawn interval control
-            if(this.time >= this.spawnInterval){
+            if(this.time > this.spawnInterval){
 
                 this.time = 0;
                 this.change = !this.change;

@@ -500,7 +500,7 @@
                     "type": "physx",
                     "physx": {
                         "sphere": {
-                            "radius": 0.15
+                            "radius": 0.25
                         },
                         "simulate": true,
                         "gravity": false,
@@ -521,9 +521,9 @@
                 }
             ],
             "scaling": [
-                0.15,
-                0.15,
-                0.15
+                0.25,
+                0.25,
+                0.25
             ],
             "translation": [
                 0.0,
@@ -2158,7 +2158,7 @@
                         "shape": "box",
                         "box": {
                             "extents": [
-                                0.025,
+                                0.05,
                                 0.1,
                                 0.1
                             ]
@@ -2175,7 +2175,7 @@
                 1.0
             ],
             "scaling": [
-                0.025,
+                0.05,
                 0.1,
                 1.0
             ],

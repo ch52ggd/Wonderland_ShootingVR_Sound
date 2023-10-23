@@ -55,13 +55,13 @@ export class BulletManager extends Component {
             material: this.bulletMaterial
         });
 
-        obj.scaleLocal([[0.025], [0.1], [0.1]]);
+        obj.scaleLocal([[0.05], [0.1], [0.1]]);
 
         obj.setPositionWorld([this.newBulletPos[0], this.newBulletPos[1], this.newBulletPos[2]]);
 
         obj.addComponent(PhysXComponent, {
             shape: Shape.Box,
-            extents: [[0.025], [0.1], [0.1]],
+            extents: [[0.05], [0.1], [0.1]],
             // groupsMask: (1 << 4) | (1 << 5) | (1 << 6) | (1 << 3),
             // blocksMask: (1 << 4) | (1 << 5) | (1 << 6) | (1 << 3),
 

@@ -41,7 +41,6 @@ export class Bullet extends Component {
 
         if(this.bulletPos[1] > 6.5){
 
-            this.gameManager.isKill();
             this.object.destroy();
         } 
     }
@@ -64,6 +63,7 @@ export class Bullet extends Component {
                     if(otherObj.includes("enemy")){
 
                         this.playerController.explosionSound.play();
+                        this.gameManager.isKill();
                         setTimeout(() => {this.object.destroy();}, 50);
                     }
                     
